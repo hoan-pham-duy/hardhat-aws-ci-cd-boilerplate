@@ -20,8 +20,20 @@ cd hardhat-boilerplate
 npm install
 ```
 
+If you want to deploy in Goerli network:
+-  Copy .env.example to .env
+```sh
+  cp .env.example .env
+```
+
+- Need to go to https://www.alchemyapi.io , register an account
+
+- In https://dashboard.alchemy.com/, copy API Key, paste to .env file
+- Install Metamask wallet, create an account or use your account, export private key then paste to .env file
+
 Once installed, let's run Hardhat's testing network:
 
+- localhost:
 ```sh
 npx hardhat node
 ```
@@ -29,9 +41,17 @@ npx hardhat node
 Then, on a new terminal, go to the repository's root folder and run this to
 deploy your contract:
 
+- localhost:
 ```sh
 npx hardhat run scripts/deploy.js --network localhost
 ```
+
+- Goerli:
+```sh
+npx hardhat run scripts/deploy.js --network goerli
+```
+
+
 
 Finally, we can run the frontend with:
 
