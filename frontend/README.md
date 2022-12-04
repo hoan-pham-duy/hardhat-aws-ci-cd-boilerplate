@@ -3,6 +3,17 @@
 This directory has a sample Dapp to interact with your contracts, built using
 React.
 
+# Install environment variables
+Copy environment files:
+```sh
+cp .env.example .env
+```
+Edit REACT_APP_CHAIN_ID and REACT_APP_NETWORK_URL in .env file
+Example with my ETH - Goerli - Alchemyapi:
+```sh
+REACT_APP_CHAIN_ID="5"
+REACT_APP_NETWORK_URL="https://eth-goerli.alchemyapi.io/v2/LLjU8uPGGell5MrQod40P5cNtZFv5d6j"
+```
 ## Running the Dapp
 
 This project uses [`create-react-app`](https://create-react-app.dev/), so most

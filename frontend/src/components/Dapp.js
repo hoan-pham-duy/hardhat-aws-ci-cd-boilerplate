@@ -19,10 +19,12 @@ import { TransactionErrorMessage } from "./TransactionErrorMessage";
 import { WaitingForTransactionMessage } from "./WaitingForTransactionMessage";
 import { NoTokensMessage } from "./NoTokensMessage";
 
+require("dotenv").config()
+
 // This is the Hardhat Network id that we set in our hardhat.config.js.
 // Here's a list of network ids https://docs.metamask.io/guide/ethereum-provider.html#properties
 // to use when deploying to other networks.
-const HARDHAT_NETWORK_ID = '1337';
+const HARDHAT_NETWORK_ID = process.env.REACT_APP_CHAIN_ID;
 
 // This is an error code that indicates that the user canceled a transaction
 const ERROR_CODE_TX_REJECTED_BY_USER = 4001;
@@ -361,7 +363,7 @@ export class Dapp extends React.Component {
     }
 
     this.setState({ 
-      networkError: 'Please connect Metamask to Localhost:8545'
+      networkError: `Please connect Metamask to ${process.env.REACT_APP_NETWORK_URL}`
     });
 
     return false;
